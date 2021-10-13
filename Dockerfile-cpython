@@ -1,0 +1,6 @@
+FROM powerapi/powerapi:1.0.0
+USER powerapi
+COPY --chown=powerapi . /tmp/dummy
+RUN pip install --user --no-cache-dir "/tmp/dummy" && rm -r /tmp/dummy
+
+ENTRYPOINT ["python3", "-m", "dummy"]
