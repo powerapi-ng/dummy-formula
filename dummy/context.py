@@ -19,5 +19,26 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from setuptools import setup
-setup()
+from enum import Enum
+
+
+class DummyFormulaScope(Enum):
+    """
+    Enum used to set the scope of the formula.
+    """
+
+    CPU = "cpu"
+    DRAM = "dram"
+
+
+class DummyFormulaConfig:
+    """
+    Global config of the formula.
+    """
+
+    def __init__(self, arg1):
+        """
+        Initialize a new formula config object.
+        :param the args of your parser
+        """
+        self.arg1 = arg1
